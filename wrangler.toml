@@ -1,0 +1,25 @@
+# Cloudflare Workers Configuration (Local Development)
+# For CI/CD, secrets are used from GitHub Actions. See DEPLOYMENT.md for setup.
+
+name = "fuseextractor"  # Change to your desired worker name
+type = "service"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+# Production environment configuration
+[env.production]
+routes = [
+  # Update with your domain
+  { pattern = "*.fuse-extractor.dev", zone_name = "fuse-extractor.dev" }
+]
+
+# Development environment (local testing)
+[env.development]
+routes = []
+
+# Enable real-time logs and analytics
+observability = { enabled = true }
+
+# CPU time limit per request (free tier: 50ms)
+limits = { cpu_milliseconds = 50 }
+

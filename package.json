@@ -1,0 +1,35 @@
+{
+  "name": "fuseextractor",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers service for keyword extraction with fuzzy synonym matching using fuse.js",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "format": "prettier --write .",
+    "lint": "eslint src/**/*.ts",
+    "test": "vitest"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "fuse.js",
+    "keyword-extraction",
+    "fuzzy-search"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fuse.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240908.0",
+    "@types/node": "^20.10.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.4",
+    "wrangler": "^3.20.0"
+  }
+}
